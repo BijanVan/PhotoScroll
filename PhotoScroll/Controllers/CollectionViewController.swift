@@ -32,10 +32,7 @@ class CollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let viewController = PhotoPageViewController(index: indexPath.row)
-        let navigationController = UINavigationController(rootViewController: viewController)
-        viewController.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "done", style: .done, target: self, action: #selector(doneTapped(_:)))
-        viewController.navigationItem.title = NSLocalizedString("Zoomed View", comment: "Zoomed View title")
-        present(navigationController, animated: true)
+        navigationController?.pushViewController(viewController, animated: true)
     }
 
     // MARK: Private functions
